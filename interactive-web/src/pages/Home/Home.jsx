@@ -20,11 +20,7 @@ function Home() {
           {chapters.map(chapter => {
             const stats = getChapterStats(chapter.id, chapter.cards.length)
             return (
-              <Link
-                key={chapter.id}
-                to={`/practice/${chapter.id}`}
-                className={styles.chapterCard}
-              >
+              <div key={chapter.id} className={styles.chapterCard}>
                 <div className={styles.chapterIcon}>{chapter.icon}</div>
                 <div className={styles.chapterInfo}>
                   <h3 className={styles.chapterName}>{chapter.name}</h3>
@@ -37,8 +33,16 @@ function Home() {
                       <span>{chapter.cards.length} 张卡片</span>
                     )}
                   </div>
+                  <div className={styles.chapterActions}>
+                    <Link to={`/learn/${chapter.id}`} className={styles.learnBtn}>
+                      📚 学习课程
+                    </Link>
+                    <Link to={`/practice/${chapter.id}`} className={styles.practiceBtn}>
+                      🎯 开始练习
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+              </div>
             )
           })}
         </div>
