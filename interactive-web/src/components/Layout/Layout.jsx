@@ -16,13 +16,13 @@ function Layout({ children }) {
             to="/"
             className={`${styles.navLink} ${location.pathname === '/' ? styles.active : ''}`}
           >
-            首页
+            🏠 首页
           </Link>
           <Link
             to="/practice/initials"
             className={`${styles.navLink} ${location.pathname.includes('/practice') ? styles.active : ''}`}
           >
-            练习
+            🎯 练习
           </Link>
         </nav>
       </header>

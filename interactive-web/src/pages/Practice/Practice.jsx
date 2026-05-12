@@ -102,6 +102,9 @@ function Practice() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
+        <button className={styles.backBtn} onClick={() => navigate('/')}>
+          ← 返回首页
+        </button>
         <h1 className={styles.chapterTitle}>{chapter.icon} {chapter.name}</h1>
         <Progress current={currentIndex + 1} total={chapter.cards.length} />
       </div>
