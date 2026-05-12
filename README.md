@@ -35,3 +35,36 @@ Part 1（快速复习）→ Part 2 → Part 3 → Part 4
 
 ### 只想提升打字
 Part 2 → Part 4
+
+## 部署到GitHub Pages
+
+### 步骤1：创建GitHub仓库
+1. 登录GitHub，点击右上角"+"号，选择"New repository"
+2. 仓库名称填写：`pinyin-course`
+3. 选择"Public"（免费）
+4. 点击"Create repository"
+
+### 步骤2：推送代码到GitHub
+```bash
+# 在项目目录中执行
+git remote add origin https://github.com/你的用户名/pinyin-course.git
+git branch -M main
+git push -u origin main
+```
+
+### 步骤3：启用GitHub Pages
+1. 进入仓库页面，点击"Settings"
+2. 左侧菜单找到"Pages"
+3. Source选择"Deploy from a branch"
+4. Branch选择"main"，文件夹选择"/ (root)"
+5. 点击"Save"
+
+### 步骤4：访问网站
+等待几分钟后，访问：`https://你的用户名.github.io/pinyin-course/`
+
+## 课程特色
+
+- **系统性**：从拼音基础到打字技巧，循序渐进
+- **实用性**：真实场景案例，学以致用
+- **灵活性**：支持不同水平的学习者
+- **互动性**：包含练习和测验
