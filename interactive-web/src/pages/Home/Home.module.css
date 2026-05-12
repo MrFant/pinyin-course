@@ -1,0 +1,104 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.chapterGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chapterCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.chapterCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.chapterIcon {
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chapterInfo {
+  flex: 1;
+}
+
+.chapterName {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.chapterDesc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.chapterStats {
+  font-size: 12px;
+  color: #999;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .chapterCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .chapterIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+  }
+}
