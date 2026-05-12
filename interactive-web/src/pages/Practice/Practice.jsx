@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getChapterById } from '../../data/chapters'
 import useProgressStore from '../../store/progressStore'
+import useAudio from '../../hooks/useAudio'
 import FlashCard from '../../components/FlashCard/FlashCard'
 import Button from '../../components/Button/Button'
 import Progress from '../../components/Progress/Progress'
@@ -19,6 +20,14 @@ function Practice() {
 
   const markCardCompleted = useProgressStore(state => state.markCardCompleted)
   const getChapterStats = useProgressStore(state => state.getChapterStats)
+  const { speakPinyin } = useAudio()
+
+  const handleFlip = useCallback((flipped) => {
+    setIsFlipped(flipped)
+    if (flipped && chapter) {
+      speakPinyin(chapter.cards[currentIndex].back.pinyin)
+    }
+  }, [chapter, currentIndex, speakPinyin])
 
   useEffect(() => {
     setCurrentIndex(0)
@@ -101,7 +110,7 @@ function Practice() {
         <FlashCard
           front={currentCard.front}
           back={currentCard.back}
-          onFlip={setIsFlipped}
+          onFlip={handleFlip}
         />
       </div>
 

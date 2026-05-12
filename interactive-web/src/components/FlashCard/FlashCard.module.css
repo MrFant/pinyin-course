@@ -90,6 +90,43 @@
   line-height: 1.4;
 }
 
+.pinyinRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.pinyinRow .pinyin {
+  margin-bottom: 0;
+}
+
+.audioBtn {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.audioBtn:hover {
+  background: #5a6fd6;
+  transform: scale(1.1);
+}
+
+.audioBtn:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 480px) {
   .container {
     width: 260px;

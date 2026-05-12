@@ -1,13 +1,20 @@
 import { useState } from 'react'
+import useAudio from '../../hooks/useAudio'
 import styles from './FlashCard.module.css'
 
 function FlashCard({ front, back, onFlip }) {
   const [isFlipped, setIsFlipped] = useState(false)
+  const { speakPinyin } = useAudio()
 
   const handleClick = () => {
     const newState = !isFlipped
     setIsFlipped(newState)
     onFlip && onFlip(newState)
+  }
+
+  const handleAudioClick = (e) => {
+    e.stopPropagation()
+    speakPinyin(back.pinyin)
   }
 
   return (
@@ -21,7 +28,12 @@ function FlashCard({ front, back, onFlip }) {
         </div>
         <div className={`${styles.face} ${styles.back}`}>
           <div className={styles.content}>
-            <div className={styles.pinyin}>{back.pinyin}</div>
+            <div className={styles.pinyinRow}>
+              <div className={styles.pinyin}>{back.pinyin}</div>
+              <button className={styles.audioBtn} onClick={handleAudioClick} title="播放发音">
+                🔊
+              </button>
+            </div>
             <div className={styles.character}>{back.character}</div>
             <div className={styles.meaning}>{back.meaning}</div>
             <div className={styles.example}>例：{back.example}</div>
