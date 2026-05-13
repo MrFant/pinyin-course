@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/pinyin-course/',
   build: {
-    outDir: '../docs/course-web',
+    outDir: '../docs',
     assetsDir: 'assets'
   }
 })
