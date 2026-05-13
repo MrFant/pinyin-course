@@ -1,0 +1,42 @@
+.container {
+  line-height: 1.8;
+  color: #444;
+}
+
+.paragraph {
+  margin-bottom: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.bullet {
+  color: #667eea;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.number {
+  color: #667eea;
+  margin-right: 10px;
+  font-weight: bold;
+  min-width: 20px;
+}
+
+.bold {
+  color: #333;
+  font-weight: 600;
+}
+
+.code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  color: #e83e8c;
+}

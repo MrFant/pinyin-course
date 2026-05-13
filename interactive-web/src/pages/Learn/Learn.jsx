@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { getChapterContent } from '../../data/courseContent'
 import Button from '../../components/Button/Button'
+import MarkdownRenderer from '../../components/MarkdownRenderer/MarkdownRenderer'
 import styles from './Learn.module.css'
 
 function Learn() {
@@ -32,9 +33,7 @@ function Learn() {
           <div key={index} className={styles.section}>
             <h2 className={styles.sectionTitle}>{section.title}</h2>
             <div className={styles.sectionContent}>
-              {section.content.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+              <MarkdownRenderer content={section.content} />
             </div>
           </div>
         ))}
