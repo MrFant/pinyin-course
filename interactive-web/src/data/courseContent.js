@@ -32,7 +32,9 @@ export const courseContent = {
 **m（摸）** - 双唇浊鼻音
 - 发音方法：双唇紧闭，气流从鼻腔通过
 - 示例：妈(mā)、马(mǎ)、买(mǎi)、卖(mài)
-- 记忆：嘴巴闭起来，声音从鼻子出来`
+- 记忆：嘴巴闭起来，声音从鼻子出来`,
+        visualType: 'mouthDiagram',
+        visualData: ['b', 'p', 'm']
       },
       {
         title: '舌尖中音：d, t, n, l',
@@ -52,7 +54,9 @@ export const courseContent = {
 **l（勒）** - 舌尖浊边音
 - 发音方法：舌尖抵住上齿龈，气流从舌头两边通过
 - 示例：李(lǐ)、来(lái)、六(liù)、蓝(lán)
-- 注意：和n区分！l从舌头两边出气`
+- 注意：和n区分！l从舌头两边出气`,
+        visualType: 'mouthDiagram',
+        visualData: ['d', 't', 'n', 'l']
       },
       {
         title: '易混淆声母对比',
@@ -172,7 +176,9 @@ export const courseContent = {
 
 **第四声（去声）** - 调值51
 - 特点：由高降低，像命令的语气
-- 示例：骂(mà)、是(shì)、大(dà)`
+- 示例：骂(mà)、是(shì)、大(dà)`,
+        visualType: 'toneAnimation',
+        visualData: [1, 2, 3, 4]
       },
       {
         title: '变调规则',

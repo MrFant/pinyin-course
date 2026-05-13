@@ -2,6 +2,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import { getChapterContent } from '../../data/courseContent'
 import Button from '../../components/Button/Button'
 import MarkdownRenderer from '../../components/MarkdownRenderer/MarkdownRenderer'
+import MouthDiagram from '../../components/MouthDiagram/MouthDiagram'
+import ToneAnimation from '../../components/ToneAnimation/ToneAnimation'
 import styles from './Learn.module.css'
 
 function Learn() {
@@ -35,6 +37,20 @@ function Learn() {
             <div className={styles.sectionContent}>
               <MarkdownRenderer content={section.content} />
             </div>
+            {section.visualType === 'mouthDiagram' && section.visualData && (
+              <div className={styles.visualRow}>
+                {section.visualData.map((initial) => (
+                  <MouthDiagram key={initial} initial={initial} />
+                ))}
+              </div>
+            )}
+            {section.visualType === 'toneAnimation' && section.visualData && (
+              <div className={styles.visualRow}>
+                {section.visualData.map((tone) => (
+                  <ToneAnimation key={tone} tone={tone} />
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
