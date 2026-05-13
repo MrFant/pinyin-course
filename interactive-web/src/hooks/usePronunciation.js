@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { pinyin } from 'pinyin-pro'
-import PinyinAudioService from '../services/pinyinAudio'
+import TtsService from '../services/ttsService'
 
 // Shared pinyin converter - cache results
 const pinyinCache = new Map()
@@ -25,7 +25,7 @@ const usePronunciation = () => {
     setIsSpeaking(true)
 
     try {
-      const success = await PinyinAudioService.play(text)
+      const success = await TtsService.play(text)
       if (!success) {
         setAudioError('语音播放失败，请重试')
       }
