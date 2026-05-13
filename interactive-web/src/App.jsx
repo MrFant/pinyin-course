@@ -6,7 +6,7 @@ import Practice from './pages/Practice/Practice'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/pinyin-course">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
