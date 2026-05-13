@@ -33,6 +33,48 @@
   text-align: center;
 }
 
+.modeSelector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modeButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f8f9fa;
+  border: 3px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 80px;
+}
+
+.modeButton:hover {
+  background: #e8e9eb;
+  border-color: #ccc;
+}
+
+.modeButtonActive {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+}
+
+.modeIcon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.modeLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
 .cardArea {
   display: flex;
   justify-content: center;
@@ -91,6 +133,23 @@
 @media (max-width: 480px) {
   .chapterTitle {
     font-size: 20px;
+  }
+
+  .modeSelector {
+    gap: 8px;
+  }
+
+  .modeButton {
+    padding: 10px 16px;
+    min-width: 70px;
+  }
+
+  .modeIcon {
+    font-size: 20px;
+  }
+
+  .modeLabel {
+    font-size: 12px;
   }
 
   .resultCard {

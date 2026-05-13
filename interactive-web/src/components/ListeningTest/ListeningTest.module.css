@@ -1,0 +1,162 @@
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loading {
+  font-size: 18px;
+  color: #999;
+  padding: 40px;
+}
+
+.characterDisplay {
+  margin-bottom: 30px;
+}
+
+.character {
+  font-size: 80px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.meaning {
+  font-size: 18px;
+  color: #666;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 30px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.playButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.playButton:active {
+  transform: translateY(0);
+}
+
+.playIcon {
+  font-size: 20px;
+}
+
+.optionsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.option {
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  background: #f8f9fa;
+  border: 3px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option:hover:not(:disabled) {
+  background: #e8e9eb;
+  border-color: #ccc;
+}
+
+.optionSelected {
+  composes: option;
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.optionCorrect {
+  composes: option;
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  animation: pulse 0.3s ease-in-out;
+}
+
+.optionWrong {
+  composes: option;
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.feedback {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.feedback.correct {
+  color: #4caf50;
+}
+
+.feedback.wrong {
+  color: #f44336;
+}
+
+.example {
+  font-size: 14px;
+  color: #999;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px;
+  }
+
+  .character {
+    font-size: 64px;
+  }
+
+  .optionsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .option {
+    padding: 14px;
+    font-size: 18px;
+  }
+}
