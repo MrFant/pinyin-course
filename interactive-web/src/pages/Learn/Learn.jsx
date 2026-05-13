@@ -4,6 +4,9 @@ import Button from '../../components/Button/Button'
 import MarkdownRenderer from '../../components/MarkdownRenderer/MarkdownRenderer'
 import MouthDiagram from '../../components/MouthDiagram/MouthDiagram'
 import ToneAnimation from '../../components/ToneAnimation/ToneAnimation'
+import FinalDiagram from '../../components/FinalDiagram/FinalDiagram'
+import SpellingDiagram from '../../components/SpellingDiagram/SpellingDiagram'
+import SyllableGrid from '../../components/SyllableGrid/SyllableGrid'
 import styles from './Learn.module.css'
 
 function Learn() {
@@ -49,6 +52,37 @@ function Learn() {
                 {section.visualData.map((tone) => (
                   <ToneAnimation key={tone} tone={tone} />
                 ))}
+              </div>
+            )}
+            {section.visualType === 'finalDiagram' && section.visualData && (
+              <div className={styles.visualRow}>
+                {section.visualData.map((final) => (
+                  <FinalDiagram key={final} final={final} />
+                ))}
+              </div>
+            )}
+            {section.visualType === 'spellingDiagram' && section.visualData && (
+              <div className={styles.visualRow}>
+                <SpellingDiagram
+                  initial={section.visualData.initial}
+                  final={section.visualData.final}
+                />
+              </div>
+            )}
+            {section.visualType === 'spellingDiagramGroup' && section.visualData && (
+              <div className={styles.visualRow}>
+                {section.visualData.map((item, idx) => (
+                  <SpellingDiagram
+                    key={idx}
+                    initial={item.initial}
+                    final={item.final}
+                  />
+                ))}
+              </div>
+            )}
+            {section.visualType === 'syllableGrid' && (
+              <div className={styles.visualRow}>
+                <SyllableGrid />
               </div>
             )}
           </div>

@@ -1,0 +1,68 @@
+.container {
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 10px;
+  border: 2px solid;
+  background: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pinyin {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.char {
+  font-size: 18px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.groupBadge {
+  font-size: 10px;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    padding: 10px 5px;
+  }
+
+  .pinyin {
+    font-size: 16px;
+  }
+
+  .char {
+    font-size: 14px;
+  }
+}

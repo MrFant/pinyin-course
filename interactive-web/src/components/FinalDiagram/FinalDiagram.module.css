@@ -18,7 +18,7 @@
   margin-top: 10px;
 }
 
-.airflowBadge {
+.tongueBadge {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 12px;
@@ -27,22 +27,22 @@
   margin-bottom: 5px;
 }
 
-.airflowBadge[data-type="strong"] {
+.tongueBadge[data-type="high-front"] {
   background: #74b9ff;
   color: #0984e3;
 }
 
-.airflowBadge[data-type="nose"] {
-  background: #55efc4;
-  color: #00b894;
-}
-
-.airflowBadge[data-type="sides"] {
+.tongueBadge[data-type="high-back"] {
   background: #ffeaa7;
   color: #e17055;
 }
 
-.airflowBadge[data-type="weak"] {
+.tongueBadge[data-type="mid"] {
+  background: #55efc4;
+  color: #00b894;
+}
+
+.tongueBadge[data-type="low"] {
   background: #dfe6e9;
   color: #636e72;
 }
@@ -53,20 +53,15 @@
   margin: 5px 0 0;
 }
 
-.airflow {
-  animation: airflowPulse 1.5s ease-in-out infinite;
+.mouthShape {
+  transition: all 0.3s ease;
 }
 
-.tongue {
-  animation: tonguePulse 2s ease-in-out infinite;
+.roundIndicator {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes airflowPulse {
+@keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
-}
-
-@keyframes tonguePulse {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
 }

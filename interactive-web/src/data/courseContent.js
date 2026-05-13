@@ -37,6 +37,34 @@ export const courseContent = {
         visualData: ['b', 'p', 'm']
       },
       {
+        title: '唇齿音：f',
+        content: `**f（佛）** - 唇齿清擦音
+- 发音方法：上齿轻触下唇，气流从缝隙中通过
+- 示例：发(fā)、飞(fēi)、风(fēng)、佛(fó)
+- 记忆：像吹蜡烛一样，牙齿咬着下唇`,
+        visualType: 'mouthDiagram',
+        visualData: ['f']
+      },
+      {
+        title: '舌尖前音：z, c, s',
+        content: `**z（资）** - 舌尖前不送气清塞擦音
+- 发音方法：舌尖抵住上齿背，然后放开一条缝
+- 示例：做(zuò)、字(zì)、走(zǒu)、在(zài)
+- 记忆：像英语"ds"的发音
+
+**c（此）** - 舌尖前送气清塞擦音
+- 发音方法：舌尖抵住上齿背，气流强
+- 示例：菜(cài)、草(cǎo)、从(cóng)、次(cì)
+- 与z的区别：c送气，手放嘴前能感到气流
+
+**s（思）** - 舌尖前清擦音
+- 发音方法：舌尖接近上齿背，气流从缝隙通过
+- 示例：三(sān)、四(sì)、色(sè)、松(sōng)
+- 记忆：像英语"s"的发音`,
+        visualType: 'mouthDiagram',
+        visualData: ['z', 'c', 's']
+      },
+      {
         title: '舌尖中音：d, t, n, l',
         content: `**d（得）** - 舌尖不送气清塞音
 - 发音方法：舌尖抵住上齿龈，突然打开，气流较弱
@@ -59,6 +87,68 @@ export const courseContent = {
         visualData: ['d', 't', 'n', 'l']
       },
       {
+        title: '舌尖后音：zh, ch, sh, r',
+        content: `**zh（知）** - 舌尖后不送气清塞擦音
+- 发音方法：舌尖翘起抵住硬腭前部
+- 示例：知(zhī)、主(zhǔ)、中(zhōng)、张(zhāng)
+- 记忆：像英语"j"但舌尖要翘起
+
+**ch（吃）** - 舌尖后送气清塞擦音
+- 发音方法：舌尖翘起抵住硬腭，气流强
+- 示例：吃(chī)、长(cháng)、出(chū)、船(chuán)
+- 与zh的区别：ch送气
+
+**sh（诗）** - 舌尖后清擦音
+- 发音方法：舌尖翘起接近硬腭
+- 示例：是(shì)、山(shān)、书(shū)、水(shuǐ)
+- 记忆：像英语"sh"但舌尖要翘起
+
+**r（日）** - 舌尖后浊擦音
+- 发音方法：舌尖翘起，声带振动
+- 示例：日(rì)、人(rén)、热(rè)、肉(ròu)
+- 记忆：像英语"r"但舌尖要翘起`,
+        visualType: 'mouthDiagram',
+        visualData: ['zh', 'ch', 'sh', 'r']
+      },
+      {
+        title: '舌面音：j, q, x',
+        content: `**j（基）** - 舌面不送气清塞擦音
+- 发音方法：舌面前部抵住硬腭前部
+- 示例：鸡(jī)、家(jiā)、九(jiǔ)、见(jiàn)
+- 记忆：像英语"j"但舌面要贴上去
+
+**q（七）** - 舌面送气清塞擦音
+- 发音方法：舌面前部抵住硬腭，气流强
+- 示例：七(qī)、去(qù)、前(qián)、秋(qiū)
+- 与j的区别：q送气
+
+**x（西）** - 舌面清擦音
+- 发音方法：舌面前部接近硬腭
+- 示例：西(xī)、小(xiǎo)、学(xué)、下(xià)
+- 记忆：像英语"sh"但舌面要贴上去`,
+        visualType: 'mouthDiagram',
+        visualData: ['j', 'q', 'x']
+      },
+      {
+        title: '舌根音：g, k, h',
+        content: `**g（哥）** - 舌根不送气清塞音
+- 发音方法：舌根抵住软腭，突然打开
+- 示例：哥(gē)、高(gāo)、狗(gǒu)、干(gān)
+- 记忆：像英语"g"但舌根要用力
+
+**k（科）** - 舌根送气清塞音
+- 发音方法：舌根抵住软腭，气流强
+- 示例：可(kě)、开(kāi)、口(kǒu)、看(kàn)
+- 与g的区别：k送气
+
+**h（喝）** - 舌根清擦音
+- 发音方法：舌根接近软腭，气流从缝隙通过
+- 示例：喝(hē)、好(hǎo)、红(hóng)、花(huā)
+- 记忆：像英语"h"但舌根要用力`,
+        visualType: 'mouthDiagram',
+        visualData: ['g', 'k', 'h']
+      },
+      {
         title: '易混淆声母对比',
         content: `**b vs p（不送气 vs 送气）**
 - b：气流弱，手放嘴前感觉不到明显气流
@@ -67,7 +157,7 @@ export const courseContent = {
 
 **d vs t（不送气 vs 送气）**
 - d：气流弱
-- p：气流强
+- t：气流强
 - 对比：大(dà) vs 他(tā)
 
 **z vs zh（平舌 vs 翘舌）**
@@ -134,7 +224,9 @@ export const courseContent = {
 
 **ü（鱼）** - 撮口呼
 - 口型：嘴唇圆起来并向前突出
-- 示例：鱼(yú)、女(nǚ)、绿(lǜ)`
+- 示例：鱼(yú)、女(nǚ)、绿(lǜ)`,
+        visualType: 'finalDiagram',
+        visualData: ['a', 'o', 'e', 'i', 'u', 'ü']
       },
       {
         title: '前后鼻音区分',
@@ -211,7 +303,9 @@ yi, wu, yu
 ye, yue, yuan
 yin, yun, ying
 
-这些音节要作为一个整体来记忆和发音，不能拆分拼读。`
+这些音节要作为一个整体来记忆和发音，不能拆分拼读。`,
+        visualType: 'syllableGrid',
+        visualData: null
       },
       {
         title: '分类记忆',
@@ -251,7 +345,34 @@ yin, yun, ying
 
 **省写规则：**
 - iou, uei, uen前面有声母时，省略中间字母
-- 例：六(liù)、回(huí)、论(lùn)`
+- 例：六(liù)、回(huí)、论(lùn)`,
+        visualType: 'spellingDiagram',
+        visualData: { initial: 'b', final: 'a' }
+      },
+      {
+        title: '拼读练习',
+        content: `**练习拼读：**
+试着把声母和韵母拼在一起：
+
+b + a = ba
+p + o = po
+m + a = ma
+f + a = fa
+d + a = da
+t + a = ta
+n + i = ni
+l + u = lu
+
+点击下方按钮观看拼读动画！`,
+        visualType: 'spellingDiagramGroup',
+        visualData: [
+          { initial: 'b', final: 'a' },
+          { initial: 'p', final: 'o' },
+          { initial: 'm', final: 'a' },
+          { initial: 'f', final: 'a' },
+          { initial: 'd', final: 'a' },
+          { initial: 't', final: 'a' },
+        ]
       }
     ]
   }
