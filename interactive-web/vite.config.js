@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/pinyin-course/',
   build: {
-    outDir: '../',
+    outDir: '../docs/course-web',
     assetsDir: 'assets'
   }
 })
