@@ -13,13 +13,24 @@ function ToneTest({ card, onComplete, onCorrect }) {
   const [selectedTone, setSelectedTone] = useState(null)
   const [feedback, setFeedback] = useState(null)
   const [correctTone, setCorrectTone] = useState(null)
-  const { pronounceSyllable } = usePronunciation()
+  const { pronounceSyllable, isSpeaking } = usePronunciation()
 
   useEffect(() => {
     setSelectedTone(null)
     setFeedback(null)
     determineCorrectTone()
   }, [card])
+
+  // Listen for keyboard-driven tone selection from Practice page
+  useEffect(() => {
+    const handler = (e) => {
+      if (feedback !== 'correct') {
+        handleToneSelect(e.detail.tone)
+      }
+    }
+    window.addEventListener('tone-select', handler)
+    return () => window.removeEventListener('tone-select', handler)
+  }, [feedback])
 
   const determineCorrectTone = useCallback(() => {
     if (!card) return
@@ -98,9 +109,13 @@ function ToneTest({ card, onComplete, onCorrect }) {
         <div className={styles.meaning}>{card.back.meaning}</div>
       </div>
 
-      <button className={styles.playButton} onClick={handlePlayPronunciation}>
-        <span className={styles.playIcon}>▶</span>
-        <span>播放发音</span>
+      <button
+        className={`${styles.playButton} ${isSpeaking ? styles.speaking : ''}`}
+        onClick={handlePlayPronunciation}
+        disabled={isSpeaking}
+      >
+        <span className={styles.playIcon}>{isSpeaking ? '...' : '▶'}</span>
+        <span>{isSpeaking ? '播放中...' : '播放发音'}</span>
       </button>
 
       <div className={styles.question}>这是第几声？</div>

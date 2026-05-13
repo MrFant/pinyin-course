@@ -6,7 +6,7 @@ function ListeningTest({ card, allCards, onComplete, onCorrect }) {
   const [selectedOption, setSelectedOption] = useState(null)
   const [feedback, setFeedback] = useState(null)
   const [options, setOptions] = useState([])
-  const { pronounceSyllable } = usePronunciation()
+  const { pronounceSyllable, isSpeaking } = usePronunciation()
 
   useEffect(() => {
     setSelectedOption(null)
@@ -82,9 +82,13 @@ function ListeningTest({ card, allCards, onComplete, onCorrect }) {
         <div className={styles.meaning}>{card.back.meaning}</div>
       </div>
 
-      <button className={styles.playButton} onClick={handlePlayPronunciation}>
-        <span className={styles.playIcon}>▶</span>
-        <span>播放发音</span>
+      <button
+        className={`${styles.playButton} ${isSpeaking ? styles.speaking : ''}`}
+        onClick={handlePlayPronunciation}
+        disabled={isSpeaking}
+      >
+        <span className={styles.playIcon}>{isSpeaking ? '...' : '▶'}</span>
+        <span>{isSpeaking ? '播放中...' : '播放发音'}</span>
       </button>
 
       <div className={styles.optionsContainer}>

@@ -59,6 +59,11 @@
   transform: translateY(0);
 }
 
+.playButton.speaking {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  animation: pulse 1s ease-in-out infinite;
+}
+
 .playIcon {
   font-size: 20px;
 }

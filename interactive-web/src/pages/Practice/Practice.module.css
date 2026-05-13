@@ -159,4 +159,27 @@
   .statValue {
     font-size: 28px;
   }
+
+  .keyboardHint {
+    display: none;
+  }
+}
+
+.keyboardHint {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 15px;
+  user-select: none;
+}
+
+.keyboardHint kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #f8f9fa;
+  font-family: inherit;
+  font-size: 10px;
+  margin: 0 2px;
 }

@@ -7,7 +7,7 @@ function TypingPractice({ card, onComplete, onCorrect }) {
   const [feedback, setFeedback] = useState(null)
   const [isCorrect, setIsCorrect] = useState(false)
   const inputRef = useRef(null)
-  const { pronounceSyllable } = usePronunciation()
+  const { pronounceSyllable, isSpeaking } = usePronunciation()
 
   useEffect(() => {
     setUserInput('')
@@ -56,8 +56,13 @@ function TypingPractice({ card, onComplete, onCorrect }) {
     <div className={styles.container}>
       <div className={styles.characterDisplay}>
         <span className={styles.character}>{card.back.character}</span>
-        <button className={styles.audioBtn} onClick={handlePronounce} title="播放发音">
-          🔊
+        <button
+          className={`${styles.audioBtn} ${isSpeaking ? styles.speaking : ''}`}
+          onClick={handlePronounce}
+          title="播放发音"
+          disabled={isSpeaking}
+        >
+          {isSpeaking ? '...' : '🔊'}
         </button>
       </div>
 

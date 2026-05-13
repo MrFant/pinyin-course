@@ -47,6 +47,16 @@
   transform: scale(0.95);
 }
 
+.audioBtn.speaking {
+  background: #00b894;
+  animation: pulseBtn 1s ease-in-out infinite;
+}
+
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 .meaning {
   font-size: 18px;
   color: #666;

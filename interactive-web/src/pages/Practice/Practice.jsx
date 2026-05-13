@@ -47,6 +47,36 @@ function Practice() {
     setShowResult(false)
   }, [chapterId, practiceMode])
 
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Don't handle shortcuts when typing in an input
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
+
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        navigate('/')
+      }
+
+      // Enter to confirm next card in non-flashcard modes
+      if (e.key === 'Enter' && practiceMode !== 'flashcard' && !showResult) {
+        e.preventDefault()
+        handleNext()
+      }
+
+      // Number keys 1-4 for tone test
+      if (practiceMode === 'tone' && !showResult && ['1', '2', '3', '4'].includes(e.key)) {
+        e.preventDefault()
+        const tone = parseInt(e.key)
+        // Trigger tone selection via custom event
+        window.dispatchEvent(new CustomEvent('tone-select', { detail: { tone } }))
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [navigate, practiceMode, showResult])
+
   const handleModeChange = (mode) => {
     setPracticeMode(mode)
     setCurrentIndex(0)
@@ -202,6 +232,10 @@ function Practice() {
           </Button>
         </div>
       )}
+
+      <div className={styles.keyboardHint}>
+        快捷键：<kbd>Esc</kbd> 返回首页 {practiceMode !== 'flashcard' && <>· <kbd>Enter</kbd> 下一题</>}
+      </div>
     </div>
   )
 }

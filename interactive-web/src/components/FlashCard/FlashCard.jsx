@@ -4,7 +4,7 @@ import styles from './FlashCard.module.css'
 
 function FlashCard({ front, back, onFlip }) {
   const [isFlipped, setIsFlipped] = useState(false)
-  const { pronounceSyllable } = usePronunciation()
+  const { pronounceSyllable, isSpeaking } = usePronunciation()
 
   const handleClick = () => {
     const newState = !isFlipped
@@ -32,8 +32,13 @@ function FlashCard({ front, back, onFlip }) {
           <div className={styles.content}>
             <div className={styles.pinyinRow}>
               <span className={styles.pinyin}>{back?.pinyin}</span>
-              <button className={styles.audioBtn} onClick={handlePronounce} title="播放发音">
-                🔊
+              <button
+                className={`${styles.audioBtn} ${isSpeaking ? styles.speaking : ''}`}
+                onClick={handlePronounce}
+                title="播放发音"
+                disabled={isSpeaking}
+              >
+                {isSpeaking ? '...' : '🔊'}
               </button>
             </div>
             <div className={styles.character}>{back?.character}</div>
