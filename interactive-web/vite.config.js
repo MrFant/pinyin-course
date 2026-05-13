@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/pinyin-course/',
   build: {
     outDir: '../docs',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    emptyOutDir: true
   }
 })
