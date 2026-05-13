@@ -2,23 +2,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 16px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 150px;
+  min-width: 160px;
+  transition: box-shadow 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.toneHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .toneName {
   font-size: 14px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px;
+}
+
+.toneSymbol {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: serif;
 }
 
 .svg {
-  width: 120px;
-  height: 90px;
+  width: 140px;
+  height: 100px;
+}
+
+.gridLines {
+  opacity: 0.8;
 }
 
 .info {
@@ -26,10 +47,17 @@
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  gap: 2px;
+}
+
+.valueRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .value {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -40,31 +68,36 @@
 
 .playBtn {
   margin-top: 10px;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-.playBtn:hover {
+.playBtn:hover:not(:disabled) {
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
-.animatedPath {
-  animation: drawPath 1s ease-out forwards;
+.playBtn:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
-@keyframes drawPath {
-  from {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-  }
-  to {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 0;
-  }
+.playBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.playing {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.animatedDot {
+  filter: drop-shadow(0 0 3px currentColor);
 }

@@ -9,13 +9,28 @@
 }
 
 .svg {
-  width: 120px;
-  height: 100px;
+  width: 140px;
+  height: 110px;
 }
 
 .label {
   text-align: center;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 .airflowBadge {
@@ -24,7 +39,6 @@
   border-radius: 12px;
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 .airflowBadge[data-type="strong"] {
@@ -59,6 +73,10 @@
 
 .tongue {
   animation: tonguePulse 2s ease-in-out infinite;
+}
+
+.teeth {
+  opacity: 0.9;
 }
 
 @keyframes airflowPulse {
