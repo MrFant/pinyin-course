@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './Button.module.css'
 
 function Button({ children, variant = 'primary', onClick, disabled = false }) {
@@ -12,4 +13,4 @@ function Button({ children, variant = 'primary', onClick, disabled = false }) {
   )
 }
 
-export default Button
+export default memo(Button)

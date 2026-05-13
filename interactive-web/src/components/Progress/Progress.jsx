@@ -1,7 +1,8 @@
+import { memo, useMemo } from 'react'
 import styles from './Progress.module.css'
 
 function Progress({ current, total, showLabel = true }) {
-  const percentage = total > 0 ? Math.round((current / total) * 100) : 0
+  const percentage = useMemo(() => total > 0 ? Math.round((current / total) * 100) : 0, [current, total])
 
   return (
     <div className={styles.container}>
@@ -20,4 +21,4 @@ function Progress({ current, total, showLabel = true }) {
   )
 }
 
-export default Progress
+export default memo(Progress)

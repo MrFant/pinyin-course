@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './MouthDiagram.module.css'
 
 const mouthPositions = {
@@ -222,4 +223,4 @@ function MouthDiagram({ initial, showLabel = true }) {
   )
 }
 
-export default MouthDiagram
+export default memo(MouthDiagram)

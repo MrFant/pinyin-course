@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, memo, useMemo } from 'react'
 import styles from './ToneAnimation.module.css'
 
 const toneData = {
@@ -265,4 +265,4 @@ function parsePathPoints(pathD) {
   return points
 }
 
-export default ToneAnimation
+export default memo(ToneAnimation)

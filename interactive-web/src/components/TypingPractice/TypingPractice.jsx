@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import usePronunciation from '../../hooks/usePronunciation'
 import styles from './TypingPractice.module.css'
 
@@ -96,4 +96,4 @@ function TypingPractice({ card, onComplete, onCorrect }) {
   )
 }
 
-export default TypingPractice
+export default memo(TypingPractice)

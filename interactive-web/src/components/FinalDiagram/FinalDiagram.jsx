@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './FinalDiagram.module.css'
 
 const finalShapes = {
@@ -124,4 +125,4 @@ function FinalDiagram({ final, showLabel = true }) {
   )
 }
 
-export default FinalDiagram
+export default memo(FinalDiagram)

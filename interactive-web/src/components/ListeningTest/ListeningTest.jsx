@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, memo } from 'react'
 import usePronunciation from '../../hooks/usePronunciation'
 import styles from './ListeningTest.module.css'
 
@@ -113,4 +113,4 @@ function ListeningTest({ card, allCards, onComplete, onCorrect }) {
   )
 }
 
-export default ListeningTest
+export default memo(ListeningTest)

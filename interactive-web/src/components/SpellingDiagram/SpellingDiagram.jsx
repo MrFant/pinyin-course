@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import styles from './SpellingDiagram.module.css'
 
 const syllableExamples = [
@@ -73,4 +73,4 @@ function SpellingDiagram({ initial = 'b', final = 'a', autoPlay = false }) {
 }
 
 export { syllableExamples }
-export default SpellingDiagram
+export default memo(SpellingDiagram)

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, memo } from 'react'
 import usePronunciation from '../../hooks/usePronunciation'
 import styles from './ToneTest.module.css'
 
@@ -137,4 +137,4 @@ function ToneTest({ card, onComplete, onCorrect }) {
   )
 }
 
-export default ToneTest
+export default memo(ToneTest)

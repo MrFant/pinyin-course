@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import usePronunciation from '../../hooks/usePronunciation'
 import styles from './FlashCard.module.css'
 
@@ -47,4 +47,4 @@ function FlashCard({ front, back, onFlip }) {
   )
 }
 
-export default FlashCard
+export default memo(FlashCard)

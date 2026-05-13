@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './SyllableGrid.module.css'
 
 const syllables = [
@@ -56,4 +57,4 @@ function SyllableGrid({ showGroupColors = true }) {
   )
 }
 
-export default SyllableGrid
+export default memo(SyllableGrid)

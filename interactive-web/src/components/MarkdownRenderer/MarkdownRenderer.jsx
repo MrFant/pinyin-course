@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './MarkdownRenderer.module.css'
 
 function parseMarkdown(text) {
@@ -103,4 +104,4 @@ function MarkdownRenderer({ content, className = '' }) {
   )
 }
 
-export default MarkdownRenderer
+export default memo(MarkdownRenderer)
